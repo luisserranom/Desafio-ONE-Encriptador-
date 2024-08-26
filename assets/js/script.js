@@ -69,6 +69,9 @@ function btnDesencriptar(){
         mensaje.value = textoEncriptado;
         textArea.value = "";
         mensaje.style.backgroundImage = "none";
+        mensajeH6.style.display = "none";
+        mensajeP.style.display = "none";
+        btnCopiar.style.display = "inline"  
     }   
 }
 

@@ -49,7 +49,7 @@ main{
 
 .section-salida{
     grid-area: salida;
-    margin-left: -30%;
+   
 }
 .text-area{
     border: none;
@@ -89,8 +89,6 @@ main{
     border: none;
     border-radius: 24px;
     color: var(--color-fuente-principal);
-    padding: 200px;
-    width: 75%;
     height: 650px;
     min-height: 500px; 
     resize: none;
@@ -141,6 +139,8 @@ main{
     right: 20px;
     text-align: center;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -172,7 +172,6 @@ main{
     padding: 18px; 
     z-index: 3;
     margin: 0px; 
-    margin-right: 27%;
     
 }
 
