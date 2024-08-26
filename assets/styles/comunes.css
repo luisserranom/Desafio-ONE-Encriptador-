@@ -1,0 +1,15 @@
+:root{
+    --color-fondo: #f3f5fc;
+    --color-fuente-principal: #0a3871;
+    --color-blanco: white;
+    --color-btn-gris: #D8DFE8;
+}
+
+*{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    box-sizing: border-box;
+}
+
