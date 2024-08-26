@@ -178,91 +178,78 @@ main{
 
 
 
-@media (min-width: 768px) and (max-width: 1024px) {
-    /* Estilos específicos para tabletas */
 
-    *{
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Restablecer márgenes y padding */
+    * {
         margin: 0;
         padding: 0;
-        
+        box-sizing: border-box;
     }
     
+    /* Centrar contenido en el body */
     body {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 1fr; /* Una columna para centrar el contenido */
         grid-template-rows: auto;
         grid-template-areas: 
-            "header header header header"
-            "entrada entrada entrada entrada"
-            "salida salida salida salida"
-            "footer footer footer footer";
+            "header"
+            "entrada"
+            "salida"
+            "footer";
         gap: 1rem;
         margin: 0; 
-        justify-content: center; 
-        align-content: center; 
-    } 
+        justify-items: center; /* Centra elementos en el eje horizontal */
+        align-items: center; /* Centra elementos en el eje vertical */
+        text-align: center; /* Centra el texto */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+    }
 
-    .nav{
+    .nav {
         grid-area: header;
         width: 100%;
     } 
 
-    .section-entrada{
-        grid-area: entrada;
-        margin-left: 10%;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        margin-left: 45%;
-        
-     
+    .section-entrada,
+    .section-salida {
+        width: 90%; /* Reduce el ancho para centrar mejor */
     }
-        
+
+    .section-entrada {
+        grid-area: entrada;
+    }
+
     .section-salida{
         grid-area: salida;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center; 
-        width: 100% ;
-        margin-left: 35%;
+        margin: 0 auto; 
+        width: 80%;
+        
     }
 
-    .logo{
+    .logo {
         width: 7%;
         margin-top: 2%;
-        
     }
 
-    main{
+    main {
         display: flex;
         flex-direction: column;
-        margin-bottom: 50px;
         justify-content: center;
         align-items: center;
-        
+        margin-bottom: 50px;
+        width: 100%;
     }
 
-    .text-area{
+    .text-area {
         width: 100%;
         border: none;
         color: var(--color-fuente-principal);
-    }
-
-    ::placeholder{
-        color: var(--color-fuente-principal);
         text-align: center;
-    }
-    
-    .text-area:focus{
-        outline: none;
-    }
-
-    .advertencia {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
     }
 
     .mensaje-contenedor {
@@ -270,179 +257,152 @@ main{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; 
-        width: 70%;
+        justify-content: center;
+        width: 100%;
         margin: 0 auto;
-        margin-left:20%;
-    } 
+        text-align: center;
+        margin-left: 0;
+    }
 
     .mensaje {
         background: var(--color-blanco);
-        background-image: none;
-        background-repeat: no-repeat;
-        background-position: center;
         border: none;
         border-radius: 24px;
         color: var(--color-fuente-principal);
-        margin-top: 60px;
-        padding: 4px;
-        width: 140%;
-        height: 350px;
+        padding: 20px; /* Ajuste de padding para contenido */
+        width: 100%;
         min-height: 100px; 
-        resize: none;
-        z-index: 1;
-    }
-    
-    .mensaje::placeholder{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
     }
-    .mensaje:focus{
-        outline: none;
-    }
 
-    .botones{
+    .botones {
         display: flex;
         justify-content: center; 
         align-items: center;
         margin-top: 18px;
-    
+        gap: 10px;
     } 
 
-    .btn-desencriptar{
-        background-color: var(--color-btn-gris);
-        border: 1px solid var(--color-fuente-principal);
-        border-radius: 24px;
-        color: var(--color-fuente-principal);
-        cursor: pointer;
-        height: 67px;
-        margin-left: 30px;
-        width: 328px;
-    }
-
-    .btn-encriptar{
-        background-color: var(--color-fuente-principal);
-        border: 1px solid var(--color-fuente-principal);
-        border-radius: 24px;
-        color: var(--color-blanco);
-        cursor: pointer;
-        height: 67px;
-        width: 328px;
-    }
-
     .salida-texto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         position: absolute;
         bottom: 20px;
         left: 20px;
         right: 20px;
         text-align: center;
         z-index: 2;
+        text-align: center;
+        z-index: 2;
     }
 
-    .salida-texto h6,
-    .salida-texto p {
+    .salida-texto .mensaje1,
+    .salida-texto .mensaje2 {
         color: var(--color-fuente-principal);
         background-color: var(--color-blanco);
-        width: 100%;
-        margin: 0;
-    }
+        width: 80%;
+        text-align: center;
+        
 
-    .salida-texto h6{
-        font-size: 25px;
-    }
-
-    .salida-texto p{
-        font-size: 20px;
     }
 
     .btn-copiar {
-        display:none;
-        background-color:var(--color-blanco); 
+        display: none;
+        background-color: var(--color-blanco); 
         border: 1px solid var(--color-fuente-principal);
         border-radius: 24px;
         padding: 10px;
         z-index: 3;
         margin: 0px; 
-        
     }
-
-    
 }
 
 @media (max-width: 768px) {
     /* Estilos específicos para teléfonos móviles */
 
-    *{
+    * {
         margin: 0;
         padding: 0;
-        
+        box-sizing: border-box;
+        font-size: 16px;
     }
-    
+
     body {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-template-areas: 
-            "header  "
-            "entrada "
-            "salida  "
-            "footer  ";
+            "header"
+            "entrada"
+            "salida"
+            "footer";
         gap: 1rem;
-        margin: 0; 
-        justify-content: center; 
-        align-content: center; 
-    } 
+        margin: 0;
+        justify-items: center; 
+        align-items: center; 
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
 
-    .nav{
+    .nav {
         grid-area: header;
         width: 100%;
     }
-    
-    .section-entrada{
+
+    .section-entrada {
         grid-area: entrada;
         align-items: center;
         text-align: center;
         justify-content: center;
-        margin: 0;
+        width: 80%;
     }
 
-    .section-salida{
+    .section-salida {
         grid-area: salida;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; 
-        width: 100%;
-        margin: 0;
-        margin-left: -30%;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto; 
         padding: 0;
+        box-sizing: border-box;
         
     }
 
-    .logo{
+    .logo {
         width: 15%;
         margin-top: 1%;
-        
     }
-    
-    main{
+
+    main {
         display: flex;
         flex-direction: column;
         margin-bottom: 50px;
-        
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
     }
 
-    .text-area{
+    .text-area {
         width: 100%;
         border: none;
         color: var(--color-fuente-principal);
     }
 
-    ::placeholder{
+    ::placeholder {
         color: var(--color-fuente-principal);
         text-align: center;
     }
-    
-    .text-area:focus{
+
+    .text-area:focus {
         outline: none;
     }
 
@@ -451,17 +411,16 @@ main{
         flex-direction: row;
         align-items: center;
         gap: 0.5rem;
-    } 
+    }
 
     .mensaje-contenedor { 
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; 
+        justify-content: center;
         width: 70%;
-        
-        
+        margin-left: 0;
     }
 
     .mensaje {
@@ -474,29 +433,27 @@ main{
         color: var(--color-fuente-principal);
         margin-top: 30px;
         padding: 4px;
-        width: 100%;
+        width: 80%;
         height: 320px;
         min-height: 20px; 
         resize: none;
         z-index: 1;
-
+        text-align: center;
     }
-    
-    .mensaje:focus{
+
+    .mensaje:focus {
         outline: none;
     }
 
-    .botones{ 
+    .botones { 
         display: flex;
         flex-direction: column;
         justify-content: center; 
         align-items: center;
         margin-top: 10%;
-        
-    
     }
 
-    .btn-desencriptar{
+    .btn-desencriptar {
         background-color: var(--color-btn-gris);
         border: 1px solid var(--color-fuente-principal);
         border-radius: 24px;
@@ -507,7 +464,7 @@ main{
         margin: 5%;
     }
 
-    .btn-encriptar{
+    .btn-encriptar {
         background-color: var(--color-fuente-principal);
         border: 1px solid var(--color-fuente-principal);
         border-radius: 24px;
@@ -518,38 +475,43 @@ main{
     }
 
     .salida-texto {
+        display: flex;
         position: absolute;
         bottom: 20px;
         left: 20px;
         right: 20px;
         text-align: center;
         z-index: 2;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .salida-texto h6,
     .salida-texto p {
         color: var(--color-fuente-principal);
         background-color: var(--color-blanco);
-        width: 100%;
+        width: 80%;
         margin: 0;
     }
 
-    .salida-texto h6{
-        font-size: 25px;
+    .salida-texto h6 {
+        font-size: 16px;
     }
 
-    .salida-texto p{
-        font-size: 20px;
+    .salida-texto p {
+        font-size: 12px;
     }
 
     .btn-copiar {
-        display:none;
-        background-color:var(--color-blanco); 
+        display: none;
+        background-color: var(--color-blanco); 
         border: 1px solid var(--color-fuente-principal);
         border-radius: 24px;
         padding: 10px;
         z-index: 3;
-        margin: 0px; 
-        
+        margin: 0;
     }
 }
+
+
